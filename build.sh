@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
-uv venv
 source $HOME/.local/bin/env
+pip install -r requirements.txt
 make install
