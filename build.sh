@@ -4,4 +4,4 @@ python -m venv .venv
 . .venv/bin/activate
 
 pip install --upgrade pip
-pip install flask gunicorn python-dotenv
+make install
