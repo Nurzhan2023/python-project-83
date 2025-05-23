@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-source $HOME/.local/bin/env
 
-uv venv
-uv pip install flask python-dotenv gunicorn
+python -m venv .venv
+. .venv/bin/activate
+
+pip install --upgrade pip
+pip install flask gunicorn python-dotenv
