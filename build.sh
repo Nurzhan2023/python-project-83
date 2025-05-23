@@ -1,15 +1,10 @@
 #!/usr/bin/env bash
 
-# Установка uv (если требуется)
+# Установка uv
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# Установка зависимостей
-pip install -r requirements.txt
+# Добавим uv во временный PATH
+export PATH="$HOME/.local/bin:$PATH"
 
-# Проверка gunicorn
-echo "=== Проверка gunicorn ==="
-which gunicorn
-gunicorn --version || echo "gunicorn не найден!"
-
-# Установка через Makefile
+# Установка зависимостей через uv
 make install
