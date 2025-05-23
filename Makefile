@@ -1,4 +1,4 @@
-PORT ?= 10000
+PORT ?= 8000
 
 install:
 	uv pip install --upgrade pip
