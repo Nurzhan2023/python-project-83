@@ -12,4 +12,4 @@ build:
 	./build.sh
 
 render-start:
-	/opt/render/.local/bin/gunicorn -w 5 -b 0.0.0.0:$(PORT) page_analyzer:app
+	.local/bin/gunicorn -w 5 -b 0.0.0.0:$(PORT) page_analyzer:app
