@@ -1,6 +1,15 @@
 #!/usr/bin/env bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-source $HOME/.local/bin/env
-which gunicorn && gunicorn --version
 
+# Установка uv (если требуется)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Установка зависимостей
+uv pip install -r requirements.txt
+
+# Проверка gunicorn
+echo "=== Проверка gunicorn ==="
+which gunicorn
+gunicorn --version || echo "gunicorn не найден!"
+
+# Установка через Makefile
 make install

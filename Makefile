@@ -1,5 +1,5 @@
 install:
-	uv sync
+	uv pip install -r requirements.txt
 
 dev:
 	uv run flask --debug --app page_analyzer:app run
