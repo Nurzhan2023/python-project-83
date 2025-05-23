@@ -4,7 +4,7 @@
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Установка зависимостей
-uv pip install -r requirements.txt
+pip install -r requirements.txt
 
 # Проверка gunicorn
 echo "=== Проверка gunicorn ==="
