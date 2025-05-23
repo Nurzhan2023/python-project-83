@@ -1,12 +1,14 @@
 [project]
 name = "hexlet-code"
 version = "0.1.0"
-description = "Add your description here"
+description = "Hexlet Flask App"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "flask",
     "gunicorn",
     "python-dotenv",
-    "flake8",
 ]
+
+[tool.uv]
+virtualenv = ".venv"
