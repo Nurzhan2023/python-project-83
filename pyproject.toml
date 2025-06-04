@@ -1,0 +1,4 @@
+[project]
+name = "hexlet-code"
+version = "0.1.0"
+dependencies = ["flask", "gunicorn", "python-dotenv"]
