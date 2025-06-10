@@ -1,8 +1,17 @@
 [project]
 name = "hexlet-code"
 version = "0.1.0"
+
 dependencies = [
-    "Flask",
-    "gunicorn",
-    "python-dotenv"
+  "flask",
+  "python-dotenv",
+  "gunicorn",
+  "psycopg2-binary",
+  "validators",
+  "requests",
+  "beautifulsoup4"
 ]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
