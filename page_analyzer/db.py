@@ -25,7 +25,7 @@ def insert_url(name):
                 '''
                 INSERT INTO urls (name, created_at) 
                 VALUES (%s, %s) 
-                RETURNING id'
+                RETURNING id
                 ''',
                 (name, datetime.now())
             )
@@ -54,8 +54,9 @@ def get_url_by_id(id):
                 '''
                 SELECT id, name, created_at 
                 FROM urls 
-                WHERE id = %s', (id,)
-                '''
+                WHERE id = %s
+                ''',
+                (id,)
             )
             return cur.fetchone()
 
@@ -67,8 +68,9 @@ def get_url_checks_by_id(id):
                 '''
                 SELECT * FROM url_checks 
                 WHERE url_id = %s 
-                ORDER BY id DESC', (id,)
-                '''
+                ORDER BY id DESC
+                ''',
+                (id,)
             )
             return cur.fetchall()
 
