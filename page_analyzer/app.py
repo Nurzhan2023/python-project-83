@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 from urllib.parse import urlparse
 import validators
 
-from . import db
+from page_analyzer. import db
 
 load_dotenv()
 
