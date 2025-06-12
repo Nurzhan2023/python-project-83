@@ -22,7 +22,11 @@ def insert_url(name):
     with get_connection() as conn:
         with conn.cursor() as cur:
             cur.execute(
-                'INSERT INTO urls (name, created_at) VALUES (%s, %s) RETURNING id',
+                '''
+                INSERT INTO urls (name, created_at) 
+                VALUES (%s, %s) 
+                RETURNING id'
+                ''',
                 (name, datetime.now())
             )
             return cur.fetchone()[0]
@@ -46,14 +50,26 @@ def get_all_urls():
 def get_url_by_id(id):
     with get_connection() as conn:
         with conn.cursor() as cur:
-            cur.execute('SELECT id, name, created_at FROM urls WHERE id = %s', (id,))
+            cur.execute(
+                '''
+                SELECT id, name, created_at 
+                FROM urls 
+                WHERE id = %s', (id,)
+                '''
+            )
             return cur.fetchone()
 
 
 def get_url_checks_by_id(id):
     with get_connection() as conn:
         with conn.cursor() as cur:
-            cur.execute('SELECT * FROM url_checks WHERE url_id = %s ORDER BY id DESC', (id,))
+            cur.execute(
+                '''
+                SELECT * FROM url_checks 
+                WHERE url_id = %s 
+                ORDER BY id DESC', (id,)
+                '''
+            )
             return cur.fetchall()
 
 
